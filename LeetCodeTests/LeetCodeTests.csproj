@@ -54,6 +54,7 @@
     <Compile Include="Array\IntersectionTest.cs" />
     <Compile Include="Array\PlusOneTest.cs" />
     <Compile Include="Array\MoveZeroesTest.cs" />
+    <Compile Include="Array\TwoSumTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

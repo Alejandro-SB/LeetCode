@@ -16,6 +16,24 @@ namespace LeetCode
 
         #region Solutions
 
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> complements = new Dictionary<int, int>();
+            int complementary;
+
+            for(int i=0;i<nums.Length;i++)
+            {
+                complementary = target - nums[i];
+
+                if (complements.ContainsKey(nums[i]))
+                    return new int[] { complements[nums[i]], i };
+                else if(!complements.ContainsKey(complementary))                    
+                    complements.Add(complementary, i);
+            }
+
+            return new int[] { };
+        }
+
         public static void MoveZeroes(int[] nums)
         {
             ////SOLUTION 1: Concat != 0 and 0 using LINQ
@@ -26,7 +44,27 @@ namespace LeetCode
             //nums = numbers.Concat(zeroes).ToArray();
 
             //SOLUTION 2: In-place modification
-            throw new NotImplementedException();
+            int index2 = 0;
+            int index = 0;
+
+            while(index2 < nums.Length)
+            {
+                if(nums[index2] == 0)
+                {
+                    index2++;
+                }
+                else
+                {
+                    nums[index] = nums[index2];
+                    index2++;
+                    index++;
+                }
+            }
+
+            for (int i = index; i < nums.Length; i++)
+            {
+                nums[i] = 0;
+            }
         }
 
         public static int[] PlusOne(int[] num)

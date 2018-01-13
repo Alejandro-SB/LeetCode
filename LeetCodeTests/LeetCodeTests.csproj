@@ -55,7 +55,13 @@
     <Compile Include="Array\PlusOneTest.cs" />
     <Compile Include="Array\MoveZeroesTest.cs" />
     <Compile Include="Array\TwoSumTest.cs" />
+    <Compile Include="Array\RotateMatrixTest.cs" />
+    <Compile Include="Array\ValidSudokuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="String\ReverseTest.cs" />
+    <Compile Include="String\ReverseIntegerTest.cs" />
+    <Compile Include="String\FirstUniqCharTest.cs" />
+    <Compile Include="String\ValidAnagramTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

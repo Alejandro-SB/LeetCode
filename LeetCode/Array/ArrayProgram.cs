@@ -16,6 +16,102 @@ namespace LeetCode
 
         #region Solutions
 
+        public static void RotateMatrix(int[,] matrix)
+        {
+            int n = matrix.GetLength(0);
+            int temp;
+       
+            for (int i = 0; i < n / 2; i++)
+            {
+                for (int j = 0; j < Math.Ceiling(n / 2.0); j++)
+                {
+                    temp = matrix[i,j];
+                    matrix[i,j] = matrix[n - 1 - j,i];
+                    matrix[n - 1 - j,i] = matrix[n - 1 - i,n - 1 - j];
+                    matrix[n - 1 - i,n - 1 - j] = matrix[j,n - 1 - i];
+                    matrix[j,n - 1 - i] = temp;
+                }
+            }
+
+            ////Optimal
+            //var x = 0;
+            //var y = matrix.GetLength(0) - 1;
+
+            //while (x < y)
+            //{
+            //    for (int i = 0; i < y - x; i++)
+            //    {
+            //        var temp = matrix[x, x + i];
+            //        matrix[x, x + i] = matrix[y - i, x];
+            //        matrix[y - i, x] = matrix[y, y - i];
+            //        matrix[y, y - i] = matrix[x + i, y];
+            //        matrix[x + i, y] = temp;
+            //    }
+
+            //    x++;
+            //    y--;
+            //}
+        }
+
+        public static bool ValidateSudoku(char[,] sudoku)
+        {
+            Hashtable dicRow, dicColumn, dicBlock;
+
+            char elementRow, elementColumn, elementBlock;
+            //Validate Rows
+            for(int i=0;i<sudoku.GetLength(0);i++)
+            {
+                dicRow = new Hashtable();
+                dicColumn = new Hashtable();
+
+                for (int j=0;j<sudoku.GetLength(1);j++)
+                {
+                    elementRow = sudoku[i, j];
+                    elementColumn = sudoku[j, i];
+
+                    if (elementRow != '.')
+                    {
+                        if (dicRow.ContainsKey(elementRow))
+                            return false;
+                        else
+                            dicRow.Add(elementRow, elementRow);
+                        
+                    }
+
+                    if (elementColumn != '.')
+                    {
+                        if (dicColumn.ContainsKey(elementColumn))
+                            return false;
+                        else
+                            dicColumn.Add(elementColumn, elementColumn);
+                        
+                    }
+                }
+            }
+
+            //Small Squares
+            for (int block = 0; block < 9; block++)
+            {
+                dicBlock = new Hashtable();
+                for (int i = block / 3 * 3; i < block / 3 * 3 + 3; i++)
+                {
+                    for (int j = block % 3 * 3; j < block % 3 * 3 + 3; j++)
+                    {
+                        elementBlock = sudoku[i, j];
+                        if (elementBlock != '.')
+                        {
+                            if (dicBlock.ContainsKey(elementBlock))
+                                return false;
+                            else
+                                dicBlock.Add(elementBlock, elementBlock);
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
         public static int[] TwoSum(int[] nums, int target)
         {
             Dictionary<int, int> complements = new Dictionary<int, int>();

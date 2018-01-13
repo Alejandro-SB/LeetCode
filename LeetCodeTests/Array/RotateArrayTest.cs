@@ -1,7 +1,7 @@
 ﻿using LeetCode;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.Array
 {
     [TestClass]
     public class RotateArrayTest

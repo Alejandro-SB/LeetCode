@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LeetCode.Array;
+using LeetCode.String;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +9,64 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-    public static class ArrayProgram
+    public class ArrayProgram
     {
-        public static void Main(string[] args)
+        public int DominantIndex(int[] nums)
         {
+            int max = -1;
+            int maxIndex = -1;
 
+            //Get max
+            for (int i = 0; i < nums.Length; ++i)
+            {
+                if (nums[i] > max)
+                {
+                    max = nums[i];
+                    maxIndex = i;
+                }
+            }
+
+            for (int i = 0; i < nums.Length; ++i)
+            {
+                if (i != maxIndex && nums[i] != 0 && nums[maxIndex] / nums[i] < 2)
+                {
+                    return -1;
+                }
+            }
+
+            return maxIndex;
         }
+
+        public static int[] CountBits(int num)
+        {
+            int[] ints = new int[num + 1];
+            int testNumber = 0,
+                numTwos;
+
+            for (int i = 0; i <= num; i++)
+            {
+                testNumber = i;
+                numTwos = 0;
+
+                while (testNumber != 0)
+                {
+                    if (testNumber % 2 == 0)
+                    {
+                        testNumber /= 2;
+                    }
+                    else
+                    {
+                        numTwos++;
+                        testNumber--;
+                    }
+                }
+
+                ints[i] = numTwos;
+            }
+
+            return ints;
+        }
+
 
         #region Solutions
 
@@ -20,16 +74,16 @@ namespace LeetCode
         {
             int n = matrix.GetLength(0);
             int temp;
-       
+
             for (int i = 0; i < n / 2; i++)
             {
                 for (int j = 0; j < Math.Ceiling(n / 2.0); j++)
                 {
-                    temp = matrix[i,j];
-                    matrix[i,j] = matrix[n - 1 - j,i];
-                    matrix[n - 1 - j,i] = matrix[n - 1 - i,n - 1 - j];
-                    matrix[n - 1 - i,n - 1 - j] = matrix[j,n - 1 - i];
-                    matrix[j,n - 1 - i] = temp;
+                    temp = matrix[i, j];
+                    matrix[i, j] = matrix[n - 1 - j, i];
+                    matrix[n - 1 - j, i] = matrix[n - 1 - i, n - 1 - j];
+                    matrix[n - 1 - i, n - 1 - j] = matrix[j, n - 1 - i];
+                    matrix[j, n - 1 - i] = temp;
                 }
             }
 
@@ -59,12 +113,12 @@ namespace LeetCode
 
             char elementRow, elementColumn, elementBlock;
             //Validate Rows
-            for(int i=0;i<sudoku.GetLength(0);i++)
+            for (int i = 0; i < sudoku.GetLength(0); i++)
             {
                 dicRow = new Hashtable();
                 dicColumn = new Hashtable();
 
-                for (int j=0;j<sudoku.GetLength(1);j++)
+                for (int j = 0; j < sudoku.GetLength(1); j++)
                 {
                     elementRow = sudoku[i, j];
                     elementColumn = sudoku[j, i];
@@ -75,7 +129,7 @@ namespace LeetCode
                             return false;
                         else
                             dicRow.Add(elementRow, elementRow);
-                        
+
                     }
 
                     if (elementColumn != '.')
@@ -84,7 +138,7 @@ namespace LeetCode
                             return false;
                         else
                             dicColumn.Add(elementColumn, elementColumn);
-                        
+
                     }
                 }
             }
@@ -117,13 +171,13 @@ namespace LeetCode
             Dictionary<int, int> complements = new Dictionary<int, int>();
             int complementary;
 
-            for(int i=0;i<nums.Length;i++)
+            for (int i = 0; i < nums.Length; i++)
             {
                 complementary = target - nums[i];
 
                 if (complements.ContainsKey(nums[i]))
                     return new int[] { complements[nums[i]], i };
-                else if(!complements.ContainsKey(complementary))                    
+                else if (!complements.ContainsKey(complementary))
                     complements.Add(complementary, i);
             }
 
@@ -143,9 +197,9 @@ namespace LeetCode
             int index2 = 0;
             int index = 0;
 
-            while(index2 < nums.Length)
+            while (index2 < nums.Length)
             {
-                if(nums[index2] == 0)
+                if (nums[index2] == 0)
                 {
                     index2++;
                 }
@@ -167,7 +221,7 @@ namespace LeetCode
         {
             num[num.Length - 1]++;
             List<int> parsedNum = new List<int>();
-            int index = num.Length-1;
+            int index = num.Length - 1;
             int acc = 0;
             int number;
 
@@ -192,8 +246,8 @@ namespace LeetCode
 
         public static int[] Intersection(int[] nums1, int[] nums2)
         {
-            Array.Sort(nums1);
-            Array.Sort(nums2);
+            //Array.Sort(nums1);
+            //Array.Sort(nums2);
 
             List<int> temp = new List<int>();
             int i = 0;
@@ -201,13 +255,13 @@ namespace LeetCode
 
             while (i < nums1.Length && j < nums2.Length)
             {
-                if(nums1[i] == nums2[j])
+                if (nums1[i] == nums2[j])
                 {
                     temp.Add(nums1[i]);
                     i++;
                     j++;
                 }
-                else if(nums1[i]<nums2[j])
+                else if (nums1[i] < nums2[j])
                 {
                     i++;
                 }
@@ -230,13 +284,13 @@ namespace LeetCode
             if (nums == null)
                 return;
 
-            if (k <= 0 || nums.Length == 0 || k>=nums.Length)
+            if (k <= 0 || nums.Length == 0 || k >= nums.Length)
                 return;
 
             var segment1 = new ArraySegment<int>(nums, 0, k);
-            var segment2 = new ArraySegment<int>(nums, k, nums.Length-k);
+            var segment2 = new ArraySegment<int>(nums, k, nums.Length - k);
 
-            
+
             nums = segment2.Concat(segment1).ToArray();
         }
 

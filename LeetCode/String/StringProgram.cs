@@ -10,9 +10,13 @@ namespace LeetCode.String
     {
         public static string Reverse(string s)
         {
-            char[] word = s.ToCharArray();
-            Array.Reverse(word);
-            return string.Join("", word);
+            //NumJewelsInStones("aA", "aaAASSDCD");
+            return "";
+        }
+
+        public static int NumJewelsInStones(string J, string S)
+        {
+            return J.Sum(j => S.Where(s => s == j).Count());
         }
 
         public static bool IsAnagram(string s, string t)
@@ -42,7 +46,7 @@ namespace LeetCode.String
             else
             {
                 char[] s = x.ToString().ToCharArray();
-                Array.Reverse(s);
+                //Array.Reverse(s);
                 if (int.TryParse(string.Join("", s), out int number))
                     return number;
                 else

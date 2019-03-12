@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\ArrayProgram.cs" />
+    <Compile Include="Array\DiagonalTraverse.cs" />
     <Compile Include="Array\Nums.cs" />
+    <Compile Include="Array\SpiralMatrix.cs" />
     <Compile Include="Med\Pow.cs" />
     <Compile Include="Parentheses\Parentheses.cs" />
     <Compile Include="Array\PivotIndexClass.cs" />

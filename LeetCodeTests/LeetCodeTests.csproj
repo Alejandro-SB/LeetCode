@@ -48,12 +48,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Array\DiagonalTraverseTest.cs" />
     <Compile Include="Array\RotateArrayTest.cs" />
     <Compile Include="Array\CheckForDuplicatesTest.cs" />
     <Compile Include="Array\FindSingleTest.cs" />
     <Compile Include="Array\IntersectionTest.cs" />
     <Compile Include="Array\PlusOneTest.cs" />
     <Compile Include="Array\MoveZeroesTest.cs" />
+    <Compile Include="Array\SpiralMatrixTests.cs" />
     <Compile Include="Array\TwoSumTest.cs" />
     <Compile Include="Array\RotateMatrixTest.cs" />
     <Compile Include="Array\ValidSudokuTest.cs" />

@@ -10,8 +10,7 @@ namespace LeetCode.String
     {
         public static string Reverse(string s)
         {
-            //NumJewelsInStones("aA", "aaAASSDCD");
-            return "";
+            return new string(s.ToCharArray().Reverse().ToArray());
         }
 
         public static int NumJewelsInStones(string J, string S)

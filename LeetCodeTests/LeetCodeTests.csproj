@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\DiagonalTraverseTest.cs" />
+    <Compile Include="Array\PascalTriangleTests.cs" />
     <Compile Include="Array\RotateArrayTest.cs" />
     <Compile Include="Array\CheckForDuplicatesTest.cs" />
     <Compile Include="Array\FindSingleTest.cs" />

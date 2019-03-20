@@ -60,6 +60,9 @@
     <Compile Include="Array\TwoSumTest.cs" />
     <Compile Include="Array\RotateMatrixTest.cs" />
     <Compile Include="Array\ValidSudokuTest.cs" />
+    <Compile Include="Calculator\CalculatorTest.cs" />
+    <Compile Include="Lists\MergeSortedListsTests.cs" />
+    <Compile Include="String\FirstUniqueTest.cs" />
     <Compile Include="Med\PowTest.cs" />
     <Compile Include="Parentheses\ParenthesesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

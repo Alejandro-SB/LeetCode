@@ -50,11 +50,15 @@
     <Compile Include="Array\Nums.cs" />
     <Compile Include="Array\PascalTriangle.cs" />
     <Compile Include="Array\SpiralMatrix.cs" />
+    <Compile Include="Calculator\Calculator2.cs" />
+    <Compile Include="Lists\ListNode.cs" />
+    <Compile Include="Lists\MergeTwoLists.cs" />
     <Compile Include="Med\Pow.cs" />
     <Compile Include="Parentheses\Parentheses.cs" />
     <Compile Include="Array\PivotIndexClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Queue\Queue.cs" />
+    <Compile Include="String\FirstUniqueChar.cs" />
     <Compile Include="String\StringProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

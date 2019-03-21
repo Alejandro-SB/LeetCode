@@ -47,9 +47,11 @@
   <ItemGroup>
     <Compile Include="Array\ArrayProgram.cs" />
     <Compile Include="Array\DiagonalTraverse.cs" />
+    <Compile Include="Array\NumberOfIslands.cs" />
     <Compile Include="Array\Nums.cs" />
     <Compile Include="Array\PascalTriangle.cs" />
     <Compile Include="Array\SpiralMatrix.cs" />
+    <Compile Include="Array\WordSearch.cs" />
     <Compile Include="Calculator\Calculator2.cs" />
     <Compile Include="Lists\ListNode.cs" />
     <Compile Include="Lists\MergeTwoLists.cs" />

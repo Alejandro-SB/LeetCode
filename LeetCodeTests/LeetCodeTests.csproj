@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\DiagonalTraverseTest.cs" />
+    <Compile Include="Array\NumberOfIslandsTests.cs" />
     <Compile Include="Array\PascalTriangleTests.cs" />
     <Compile Include="Array\RotateArrayTest.cs" />
     <Compile Include="Array\CheckForDuplicatesTest.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Array\TwoSumTest.cs" />
     <Compile Include="Array\RotateMatrixTest.cs" />
     <Compile Include="Array\ValidSudokuTest.cs" />
+    <Compile Include="Array\WordSearchTest.cs" />
     <Compile Include="Calculator\CalculatorTest.cs" />
     <Compile Include="Lists\MergeSortedListsTests.cs" />
     <Compile Include="String\FirstUniqueTest.cs" />
